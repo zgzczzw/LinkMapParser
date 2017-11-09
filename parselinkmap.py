@@ -1,4 +1,11 @@
 # coding: utf8
+
+#
+#   LinkMapParser
+#   author:     eric.zhang
+#   email:      zgzczzw@163.com
+#
+
 import sys
 import os
 

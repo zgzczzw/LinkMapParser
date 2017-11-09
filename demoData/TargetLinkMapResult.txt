@@ -1,0 +1,10 @@
+AppDelegate.o                                      			0.64M
+ViewController.o                                   			0.00M
+TestCleanPackage.app.xcent                         			0.00M
+UnUsedClass.o                                      			0.00M
+main.o                                             			0.00M
+libobjc.tbd                                        			0.00M
+linker synthesized                                 			0.00M
+Foundation.tbd                                     			0.00M
+UIKit.tbd                                          			0.00M
+总体积:                                           0.64M
