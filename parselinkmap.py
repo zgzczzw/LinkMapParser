@@ -90,16 +90,21 @@ def read_base_link_map_file(base_link_map_file, base_link_map_result_file):
             a_file_map = {}
             for key in size_map:
                 symbol = size_map[key]
-                total_size += symbol["size"]
-                o_file_name = symbol["file"].split("/")[-1]
-                a_file_name = o_file_name.split("(")[0]
-                if a_file_name in a_file_map:
-                    a_file_map[a_file_name] += symbol["size"]
+                if "size" in symbol:
+                    total_size += symbol["size"]
+                    o_file_name = symbol["file"].split("/")[-1]
+                    a_file_name = o_file_name.split("(")[0]
+                    if a_file_name in a_file_map:
+                        a_file_map[a_file_name] += symbol["size"]
+                        pass
+                    else:
+                        a_file_map[a_file_name] = symbol["size"]
+                        pass
                     pass
                 else:
-                    a_file_map[a_file_name] = symbol["size"]
-                    pass
-                pass
+                    print "WARN : some error occurred for key ",
+                    print key
+
             a_file_sorted_list = sorted(a_file_map.items(), key=lambda x: x[1], reverse=True)
             print "%s" % "=".ljust(80, '=')
             print "%s" % (base_link_map_file+"各模块体积汇总").center(87)
